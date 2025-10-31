@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #fff5f0;
+            background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
         }
@@ -29,54 +29,70 @@
         header {
             background-color: #FF531A;
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo-container {
+        .header-content {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
-            text-align: center;
         }
 
         .logo span {
             color: #FF9D00;
         }
 
-        .tagline {
-            text-align: center;
-            font-style: italic;
-            margin-top: 5px;
-            color: #ffe8e0;
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(255, 83, 26, 0.8), rgba(255, 157, 0, 0.8)), url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(255, 83, 26, 0.9), rgba(255, 157, 0, 0.9)), url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 80px 0;
             text-align: center;
             color: white;
-            padding: 0 20px;
         }
 
-        .hero-content h1 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: 2.8rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .hero-content p {
+        .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             max-width: 600px;
@@ -103,17 +119,210 @@
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
 
-        /* About Section */
-        .about {
-            padding: 80px 0;
+        /* Categories Section */
+        .categories {
+            padding: 50px 0;
             background-color: white;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.2rem;
+            margin-bottom: 40px;
+            font-size: 2rem;
             color: #FF531A;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .category-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-item:hover {
+            background-color: #fff5f0;
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #FF531A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .category-item h3 {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            padding: 50px 0;
+            background-color: #f5f5f5;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #333;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: #FF531A;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
+        .product-discount {
+            background-color: #FF531A;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        .product-rating {
+            color: #FF9D00;
+            margin-bottom: 10px;
+        }
+
+        .product-sold {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Stores Section */
+        .stores {
+            padding: 50px 0;
+            background-color: white;
+        }
+
+        .stores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .store-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .store-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .store-header {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #fff5f0;
+        }
+
+        .store-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .store-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #FF531A;
+        }
+
+        .store-rating {
+            color: #FF9D00;
+            font-size: 0.9rem;
+        }
+
+        .store-products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 15px;
+        }
+
+        .store-product {
+            border-radius: 5px;
+            overflow: hidden;
+            height: 80px;
+        }
+
+        .store-product img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .store-footer {
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 0;
+            background-color: #f5f5f5;
         }
 
         .about-content {
@@ -150,60 +359,9 @@
             display: block;
         }
 
-        /* Stores Section */
-        .stores {
-            padding: 80px 0;
-            background-color: #fff5f0;
-        }
-
-        .stores-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .store-item {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .store-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .store-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .store-item-content {
-            padding: 20px;
-        }
-
-        .store-item h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #FF531A;
-        }
-
-        .store-item p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-
-        .commission {
-            font-weight: bold;
-            color: #FF9D00;
-            font-size: 1.2rem;
-        }
-
         /* Contact Section */
         .contact {
-            padding: 80px 0;
+            padding: 50px 0;
             background-color: white;
         }
 
@@ -358,17 +516,31 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                max-width: 100%;
+                margin: 0;
+            }
+            
             .about-content, .contact-container {
                 flex-direction: column;
             }
             
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 2.2rem;
             }
             
             .footer-content {
                 flex-direction: column;
                 gap: 30px;
+            }
+            
+            .store-products {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -377,35 +549,158 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo-container">
+            <div class="header-content">
                 <div class="logo">21<span>AFRO</span>21</div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos, marcas e lojas...">
+                </div>
+                <div class="nav-links">
+                    <a href="#products">Produtos</a>
+                    <a href="#stores">Lojas</a>
+                    <a href="#contact">Contato</a>
+                </div>
             </div>
-            <p class="tagline">Lojas Parceiras Shopee - As Melhores Ofertas</p>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Descubra Nossas Lojas Parceiras</h1>
-            <p>Encontre as melhores ofertas com as maiores comissões na Shopee. Parcerias selecionadas para você economizar e ganhar!</p>
-            <a href="#stores" class="btn">Ver Lojas Parceiras</a>
+        <div class="container">
+            <h1>As Melhores Ofertas da Shopee</h1>
+            <p>Descubra produtos incríveis com preços imbatíveis em nossas lojas parceiras</p>
+            <a href="#products" class="btn">Explorar Produtos</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Categories Section -->
+    <section class="categories">
         <div class="container">
-            <h2 class="section-title">Sobre a 21afro21</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Nossa Missão</h3>
-                    <p>A 21afro21 nasceu com o propósito de conectar consumidores às melhores oportunidades na Shopee, oferecendo acesso exclusivo a lojas parceiras com comissões especiais.</p>
-                    <p>Nossa curadoria garante que cada loja parceira ofereça produtos de qualidade, preços competitivos e condições vantajosas para nossos clientes.</p>
-                    <p>Acreditamos que compras inteligentes devem ser acessíveis a todos, e trabalhamos diariamente para tornar essa realidade possível.</p>
+            <h2 class="section-title">Categorias em Destaque</h2>
+            <div class="categories-grid">
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Moda</h3>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Equipe 21afro21">
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Eletrônicos</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Casa</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Beleza</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Infantil</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Alimentos</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="products">
+        <div class="container">
+            <h2 class="section-title">Produtos em Destaque</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Smartphone" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Smartphone Android 128GB Tela 6.5"</h3>
+                        <div class="product-price">
+                            R$ 899,90
+                            <span class="product-original-price">R$ 1.199,90</span>
+                            <span class="product-discount">-25%</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            (4.5)
+                        </div>
+                        <div class="product-sold">+500 vendidos</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tênis" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Tênis Esportivo Corrida Leve</h3>
+                        <div class="product-price">
+                            R$ 129,90
+                            <span class="product-original-price">R$ 179,90</span>
+                            <span class="product-discount">-28%</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            (4.0)
+                        </div>
+                        <div class="product-sold">+320 vendidos</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fones" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Fone Bluetooth Cancelamento Ruído</h3>
+                        <div class="product-price">
+                            R$ 159,90
+                            <span class="product-original-price">R$ 229,90</span>
+                            <span class="product-discount">-30%</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            (5.0)
+                        </div>
+                        <div class="product-sold">+780 vendidos</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Relógio" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Relógio Smartwatch Fitness Tracker</h3>
+                        <div class="product-price">
+                            R$ 199,90
+                            <span class="product-original-price">R$ 299,90</span>
+                            <span class="product-discount">-33%</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            (4.5)
+                        </div>
+                        <div class="product-sold">+420 vendidos</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -416,59 +711,113 @@
         <div class="container">
             <h2 class="section-title">Nossas Lojas Parceiras</h2>
             <div class="stores-grid">
-                <div class="store-item">
-                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Borboletinha Carioca">
-                    <div class="store-item-content">
-                        <h3>Borboletinha Carioca</h3>
-                        <p>Moda feminina com estilo único e qualidade incomparável</p>
-                        <p class="commission">Até 26% de Comissão</p>
-                        <a href="https://s.shopee.com.br/9zpYsa3szI" class="btn" target="_blank">Acessar Loja</a>
+                <div class="store-card">
+                    <div class="store-header">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Borboletinha Carioca" class="store-logo">
+                        <div class="store-info">
+                            <h3>Borboletinha Carioca</h3>
+                            <div class="store-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                (4.7) • Moda Feminina
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-products">
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 1">
+                        </div>
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 2">
+                        </div>
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 3">
+                        </div>
+                    </div>
+                    <div class="store-footer">
+                        <a href="https://s.shopee.com.br/9zpYsa3szI" class="btn" target="_blank">Visitar Loja</a>
                     </div>
                 </div>
-                <div class="store-item">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Outlet premium">
-                    <div class="store-item-content">
-                        <h3>Outlet premium</h3>
-                        <p>Produtos selecionados com descontos especiais</p>
-                        <p class="commission">Até 22% de Comissão</p>
-                        <a href="https://s.shopee.com.br/804UUuBV2q" class="btn" target="_blank">Acessar Loja</a>
+                <div class="store-card">
+                    <div class="store-header">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Outlet premium" class="store-logo">
+                        <div class="store-info">
+                            <h3>Outlet Premium</h3>
+                            <div class="store-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                (4.2) • Variedades
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-products">
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 1">
+                        </div>
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 2">
+                        </div>
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 3">
+                        </div>
+                    </div>
+                    <div class="store-footer">
+                        <a href="https://s.shopee.com.br/804UUuBV2q" class="btn" target="_blank">Visitar Loja</a>
                     </div>
                 </div>
-                <div class="store-item">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="MIXX OFERTA SHOP">
-                    <div class="store-item-content">
-                        <h3>MIXX OFERTA SHOP</h3>
-                        <p>Variedade incrível com os melhores preços</p>
-                        <p class="commission">Até 22% de Comissão</p>
-                        <a href="https://s.shopee.com.br/qbJxjcmaf" class="btn" target="_blank">Acessar Loja</a>
+                <div class="store-card">
+                    <div class="store-header">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="MIXX OFERTA SHOP" class="store-logo">
+                        <div class="store-info">
+                            <h3>MIXX OFERTA SHOP</h3>
+                            <div class="store-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                (5.0) • Eletrônicos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="store-products">
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 1">
+                        </div>
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 2">
+                        </div>
+                        <div class="store-product">
+                            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Produto 3">
+                        </div>
+                    </div>
+                    <div class="store-footer">
+                        <a href="https://s.shopee.com.br/qbJxjcmaf" class="btn" target="_blank">Visitar Loja</a>
                     </div>
                 </div>
-                <div class="store-item">
-                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Agylly Distribuidora">
-                    <div class="store-item-content">
-                        <h3>Agylly Distribuidora</h3>
-                        <p>Distribuidora oficial com produtos originais</p>
-                        <p class="commission">Até 21% de Comissão</p>
-                        <a href="https://s.shopee.com.br/AA8z4t3FeL" class="btn" target="_blank">Acessar Loja</a>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre a 21afro21</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Conectando Você às Melhores Ofertas</h3>
+                    <p>A 21afro21 nasceu com o propósito de conectar consumidores às melhores oportunidades na Shopee, oferecendo acesso exclusivo a lojas parceiras selecionadas.</p>
+                    <p>Nossa curadoria garante que cada loja parceira ofereça produtos de qualidade, preços competitivos e condições vantajosas para nossos clientes.</p>
+                    <p>Acreditamos que compras inteligentes devem ser acessíveis a todos, e trabalhamos diariamente para tornar essa realidade possível.</p>
                 </div>
-                <div class="store-item">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="RM VARIEDADES01">
-                    <div class="store-item-content">
-                        <h3>RM VARIEDADES01</h3>
-                        <p>Tudo que você precisa em um só lugar</p>
-                        <p class="commission">Até 20% de Comissão</p>
-                        <a href="https://s.shopee.com.br/8KhKtWAEMw" class="btn" target="_blank">Acessar Loja</a>
-                    </div>
-                </div>
-                <div class="store-item">
-                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="TSA VERSATIL">
-                    <div class="store-item-content">
-                        <h3>TSA VERSATIL</h3>
-                        <p>Produtos versáteis para todas as ocasiões</p>
-                        <p class="commission">Até 20% de Comissão</p>
-                        <a href="https://s.shopee.com.br/9KZs5M6QLE" class="btn" target="_blank">Acessar Loja</a>
-                    </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Equipe 21afro21">
                 </div>
             </div>
         </div>
@@ -503,10 +852,10 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Seja um Parceiro</h3>
-                    <form onsubmit="event.preventDefault(); alert('Obrigado pelo seu interesse! Entraremos em contato em breve para discutir a parceria.'); this.reset();">
+                    <h3>Dúvidas ou Sugestões?</h3>
+                    <form onsubmit="event.preventDefault(); alert('Obrigado pelo seu contato! Responderemos em breve.'); this.reset();">
                         <div class="form-group">
-                            <label for="name">Nome da Loja</label>
+                            <label for="name">Nome</label>
                             <input type="text" id="name" required>
                         </div>
                         <div class="form-group">
@@ -514,14 +863,14 @@
                             <input type="email" id="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Telefone</label>
-                            <input type="tel" id="phone">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Mensagem</label>
                             <textarea id="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Enviar Proposta</button>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
                     </form>
                 </div>
             </div>
@@ -539,13 +888,14 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>21afro21</h3>
-                    <p>Conectando você às melhores oportunidades de compras na Shopee com comissões especiais e ofertas exclusivas.</p>
+                    <p>Conectando você às melhores oportunidades de compras na Shopee com ofertas exclusivas e preços imbatíveis.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Links Rápidos</h3>
-                    <a href="#about">Sobre Nós</a>
+                    <a href="#products">Produtos</a>
                     <a href="#stores">Lojas Parceiras</a>
-                    <a href="#contact">Seja Parceiro</a>
+                    <a href="#about">Sobre Nós</a>
+                    <a href="#contact">Contato</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contato</h3>
